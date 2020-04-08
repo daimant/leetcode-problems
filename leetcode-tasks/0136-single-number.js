@@ -4,22 +4,31 @@
  * @param {number[]} nums
  * @return {number}
  */
-// ооооочень долгий метод с вложенным циклом 876мс
+// читерский но идеально подходящий для этой задачи метод с XOR time O(n) space O(1)
 var singleNumber = function(nums) {
-  let isSingle;
-  let singleNum = nums[0];
-  for (let i = 0; i < nums.length; i++) {
-    isSingle = true;
-
-    for (let j = 0; j < nums.length; j++) {
-      if (i === j) continue;
-      if (nums[i] === nums[j]) isSingle = false;
-    }
-
-    if (isSingle === true) singleNum = nums[i];
+  for (let i = 1; i < nums.length; i++) {
+    nums[0] = nums[0] ^ nums[i];
   }
-  return singleNum;
+  
+  return nums[0];
 };
+
+// ооооочень долгий метод с вложенным циклом 876мс
+// var singleNumber = function(nums) {
+//   let isSingle;
+//   let singleNum = nums[0];
+//   for (let i = 0; i < nums.length; i++) {
+//     isSingle = true;
+//
+//     for (let j = 0; j < nums.length; j++) {
+//       if (i === j) continue;
+//       if (nums[i] === nums[j]) isSingle = false;
+//     }
+//
+//     if (isSingle === true) singleNum = nums[i];
+//   }
+//   return singleNum;
+// };
 
 // еще один медленный вариант с сортировкой 240ms
 //   nums.sort((a,b) => a > b ? 1 : -1);
