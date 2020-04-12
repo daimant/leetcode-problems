@@ -11,14 +11,9 @@ var maxSubArray = function(nums) {
   for (let i = 0; i < nums.length; i++) {
     subSum += nums[i];
 
-    if (subSum > maxSum) {
-      maxSum = subSum;
-    }
-
-    if (subSum < 0) {
-      subSum = 0;
-    }
+    if (subSum > maxSum) maxSum = subSum;
+    if (subSum < 0) subSum = 0;
   }
 
-  return maxSum === 0 ? nums.sort((a, b) => (a < b ? 1 : -1))[0] : maxSum;
+  return maxSum === 0 ? Math.max(...nums) : maxSum;
 };
