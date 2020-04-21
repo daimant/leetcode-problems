@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * initialize your data structure here.
  */
@@ -12,14 +10,16 @@ var MinStack = function() {
  * @return {void}
  */
 MinStack.prototype.push = function(x) {
-  this.arr.push(x);
+  this.arr.length = this.arr.length + 1;
+  this.arr[this.arr.length - 1] = x;
 };
 
 /**
  * @return {void}
  */
 MinStack.prototype.pop = function() {
-  this.arr.pop();
+  const deleteElement = this.arr[this.arr.length - 1];
+  this.arr.length = this.arr.length - 1;
 };
 
 /**
@@ -33,7 +33,11 @@ MinStack.prototype.top = function() {
  * @return {number}
  */
 MinStack.prototype.getMin = function() {
-  return Math.min(...this.arr);
+  let minimalElement = Infinity;
+  this.arr.forEach(el => {
+    if (el < minimalElement) minimalElement = el;
+  });
+  return minimalElement;
 };
 
 /**
