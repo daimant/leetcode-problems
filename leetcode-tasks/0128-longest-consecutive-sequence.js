@@ -5,17 +5,21 @@
  * @return {number}
  */
 var longestConsecutive = function(nums) {
-  nums = [...new Set(nums)];
-  nums.sort((a, b) => (a > b ? 1 : -1));
+  const unique = new Set(nums);
+  let max = 0;
 
-  let count = 1;
-  let maxLen = 0;
+  for (let num of nums) {
+    if (!unique.has(num - 1)) {
+      let el = num,
+        sub = 1;
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i + 1] - 1) count++;
-    if (count > maxLen) maxLen = count;
-    if (nums[i] !== nums[i + 1] - 1) count = 1;
+      while (unique.has(el + 1)) {
+        sub++;
+        el++;
+      }
+      if (sub > max) max = sub;
+    }
   }
 
-  return maxLen;
+  return max;
 };
