@@ -1,0 +1,31 @@
+"use strict";
+
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {TreeNode}
+ */
+var lowestCommonAncestor = function(root, p, q) {
+  let searched;
+  open(root);
+  return searched;
+
+  function open(tree) {
+    const arr = [
+      ...(tree.left ? open(tree.left) : []),
+      ...(tree.right ? open(tree.right) : []),
+      tree
+    ];
+
+    if (arr.includes(p) && arr.includes(q) && !searched) searched = tree;
+    return arr;
+  }
+};
