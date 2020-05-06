@@ -7,20 +7,16 @@
  */
 var convert = function(s, numRows) {
   if (!s.length || !numRows) return s;
+  function add(row) {
+    arr[row] += s[i];
+    i++;
+  }
   let arr = new Array(numRows).fill(""),
     i = 0;
 
-  outer: while (1) {
-    for (let j = 0; j < numRows; j++) {
-      arr[j] += s[i];
-      i++;
-      if (i === s.length) break outer;
-    }
-    for (let k = numRows - 2; k > 0; k--) {
-      arr[k] += s[i];
-      i++;
-      if (i === s.length) break outer;
-    }
+  while (i < s.length) {
+    for (let j = 0; j < numRows && i < s.length; j++) add(j);
+    for (let k = numRows - 2; k > 0 && i < s.length; k--) add(k);
   }
 
   return arr.join("");
