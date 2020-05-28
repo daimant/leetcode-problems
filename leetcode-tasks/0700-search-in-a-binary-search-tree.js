@@ -12,15 +12,13 @@
  * @return {TreeNode}
  */
 const searchBST = function(root, val) {
-  let result = null;
-  open(root);
-  return result;
-
-  function open(tree) {
-    if (result || !tree) return;
-    if (tree.val === val) result = tree;
-
-    open(tree.left);
-    open(tree.right);
+  while (root) {
+    let direction = "";
+    if (root.val > val) direction = "left";
+    else if (root.val < val) direction = "right";
+    else return root;
+    root = root[direction];
   }
+
+  return null;
 };
