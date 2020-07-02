@@ -2,7 +2,7 @@
  * @param {number[][]} mat
  * @return {number[][]}
  */
-var diagonalSort = function(mat) {
+const diagonalSort = function(mat) {
   const takeEl = (i, j, k, arr) => {
     arr[i].push(mat[j][k]);
   };
