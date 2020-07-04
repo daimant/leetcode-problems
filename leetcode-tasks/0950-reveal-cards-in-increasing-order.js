@@ -10,9 +10,7 @@ const deckRevealedIncreasing = function(deck) {
     const curr = deck.pop();
 
     if (!result.length) result.push(curr);
-    else {
-      result.unshift(curr, result.pop());
-    }
+    else result.unshift(curr, result.pop());
   }
 
   return result;
