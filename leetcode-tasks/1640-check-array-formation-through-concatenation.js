@@ -71,17 +71,15 @@ const canFormArray2 = function(arr, pieces) {
  * @return {boolean}
  */
 const canFormArray3 = function(arr, pieces) {
-  const piecesMap = new Map(pieces.map((el, i) => [(el = el[0]), i]));
+  const piecesMap = new Map(pieces.map(el => [el[0], el]));
 
   for (let i = 0; i < arr.length; i++) {
-    let check = [];
+    const item = piecesMap.get(arr[i]);
+    if (!item) return false;
 
-    if (!piecesMap.has(arr[i])) return false;
-    else check = [...pieces[piecesMap.get(arr[i])]];
-
-    for (let k = 1; k < check.length; k++) {
+    for (let k = 1; k < item.length; k++) {
       i++;
-      if (arr[i] !== check[k]) return false;
+      if (arr[i] !== item[k]) return false;
     }
   }
 
