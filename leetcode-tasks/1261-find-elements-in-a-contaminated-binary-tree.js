@@ -22,7 +22,6 @@ const FindElements = function(root) {
   this.unique = new Set();
 
   this.change(root);
-  // console.log(JSON.stringify(root));
 };
 
 /**
