@@ -4,15 +4,13 @@
  */
 const summaryRanges = function(nums) {
   const { length: len } = nums;
-  let result = [];
+  const result = [];
 
   for (let i = 0; i < len; i++) {
-    const start = i;
-
     if (nums[i] === nums[i + 1] - 1) {
       for (let j = i + 1; j < len; j++) {
         if (nums[j] !== nums[j + 1] - 1) {
-          result.push(`${nums[start]}->${nums[j]}`);
+          result.push(`${nums[i]}->${nums[j]}`);
           i = j;
           break;
         }
