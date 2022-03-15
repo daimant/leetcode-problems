@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/daimant/leetcode-problems/issues"
   },
-  "homepage": "https://github.com/daimant/leetcode-problems#readme"
+  "homepage": "https://github.com/daimant/leetcode-problems#readme",
+  "devDependencies": {
+    "@types/node": "^17.0.21"
+  }
 }
