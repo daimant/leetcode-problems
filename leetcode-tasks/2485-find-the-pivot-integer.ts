@@ -20,3 +20,26 @@ const pivotInteger = (n: number): number => {
 
   return -1
 };
+
+// Runtime: 75 ms, faster than 100.00% of TypeScript online submissions for Find the Pivot Integer.
+// Memory Usage: 47.1 MB, less than 100.00% of TypeScript online submissions for Find the Pivot Integer.
+// one pass
+
+const pivotInteger2 = (n: number): number => {
+  const setSumsFromStart = []
+  const setSumsFromEnd = []
+  let accLeft = 0
+  let accRight = 0
+
+  for (let i = 0; i < n; i++) {
+    accLeft += i + 1
+    accRight += n - i
+    setSumsFromStart.push(accLeft)
+    setSumsFromEnd[n - i - 1] = accRight
+    if (setSumsFromEnd[i] === accLeft) return i + 1
+    if (setSumsFromStart[n - i - 1] === accRight) return n - i + 1
+  }
+
+  return -1
+};
+
