@@ -12,6 +12,9 @@ const commonFactors = (a: number, b: number): number => {
   return count
 };
 
+// Runtime: 64 ms, faster than 100.00% of TypeScript online submissions for Number of Common Factors.
+// Memory Usage: 42.6 MB, less than 89.04% of TypeScript online submissions for Number of Common Factors.
+
 const commonFactors2 = (a: number, b: number): number => {
   let count = 1
   const min = a > b ? b : a
