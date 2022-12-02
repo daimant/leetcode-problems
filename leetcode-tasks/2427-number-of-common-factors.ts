@@ -11,3 +11,14 @@ const commonFactors = (a: number, b: number): number => {
 
   return count
 };
+
+const commonFactors2 = (a: number, b: number): number => {
+  let count = 1
+  const min = a > b ? b : a
+
+  for (let i = 2; i <= min; i++) {
+    if (!(a % i) && !(b % i)) count++
+  }
+
+  return count
+};
