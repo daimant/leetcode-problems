@@ -1,3 +1,5 @@
+// wrong
+
 const equalFrequency = (word: string): boolean => {
   let err = false
 
@@ -8,3 +10,7 @@ const equalFrequency = (word: string): boolean => {
 
   return true
 };
+
+// wrong
+
+const equalFrequency2 = (word: string): boolean => word.length - 1 <= new Set(word.split('')).size;
