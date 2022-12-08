@@ -14,3 +14,33 @@ const equalFrequency = (word: string): boolean => {
 // wrong
 
 const equalFrequency2 = (word: string): boolean => word.length - 1 <= new Set(word.split('')).size;
+
+// wrong 42 / 48 testcases passed
+
+const equalFrequency3 = (word: string): boolean => {
+  const map = new Map()
+  let err = false
+
+  word.split('').forEach(el => {
+    map.set(el, map.has(el) ? map.get(el) + 1 : 1)
+  })
+
+  const letts = Array.from(map.values())
+
+  if (letts.length === 1) return true
+
+  for (let i = 0; i < letts.length - 1; i++) {
+    if (letts[i] === letts[i + 1]) continue
+    if ((letts[i] + 1 === letts[i + 1] || letts[i] - 1 === letts[i + 1]) && !err) {
+      err = true
+      i++
+    } else if ((letts[i] !== letts[i + 1] && err) || (letts[i] + 1 !== letts[i + 1] || letts[i] - 1 !== letts[i + 1])) return false
+  }
+
+  const lettAvg = letts.reduce((acc, curr) => acc + curr) / letts.length
+
+  if (letts[0] === 1 && lettAvg % 1 === 0) return true
+  else if (lettAvg % 1 === 0) return false
+
+  return true
+}
