@@ -44,3 +44,40 @@ const equalFrequency3 = (word: string): boolean => {
 
   return true
 }
+
+// wrong 40 / 48 testcases passed
+
+const equalFrequency4 = (word: string): boolean => {
+  const map = new Map()
+  let err = false
+  let allLettCountEqual = true
+
+  word.split('').forEach(el => {
+    map.set(el, map.has(el) ? map.get(el) + 1 : 1)
+  })
+
+  if (map.size === 1) return true
+
+  const letts = Array.from(map.values())
+
+  letts.sort()
+
+  for (let i = 0; i < letts.length - 1; i++) {
+    if (letts[i] !== letts[i + 1]) allLettCountEqual = false
+    if (letts[i] !== letts[i + 1] && err) return false
+    if (letts[i] < letts[i + 1] - 1 && i > 0) return false
+
+
+    if (letts[i] === letts[i + 1]) continue
+
+    if (
+      (i === 0 && letts[i] === 1 && letts[i] !== letts[i + 1] && !err) ||
+      ((letts[i] + 1 === letts[i + 1]) && !err)
+    ) {
+      err = true
+      i++
+    }
+  }
+
+  return (allLettCountEqual && letts[0] === 1) || !allLettCountEqual
+}
