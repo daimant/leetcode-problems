@@ -81,3 +81,42 @@ const equalFrequency4 = (word: string): boolean => {
 
   return (allLettCountEqual && letts[0] === 1) || !allLettCountEqual
 }
+
+// Runtime 67 ms Beats 97.62%
+// Memory 43.3 MB Beats 76.19%
+
+const equalFrequency5 = (word: string): boolean => {
+  const map = new Map()
+  let err = false
+
+  word.split('').forEach(el => {
+    map.set(el, map.has(el) ? map.get(el) + 1 : 1)
+  })
+  const letts = Array.from(map.values()).sort()
+  if (letts.length === 1) return true
+
+  for (let i = 0; i < letts.length; i++) {
+    if (letts[i] === letts[i + 1]) continue
+    else {
+      if (letts[i] === 1 && i === 0 && !err) {
+        err = true
+        letts.shift()
+        i--
+        continue
+      } else if (letts[i] + 1 === letts[i + 1] && !err) {
+        err = true
+        letts[i + 1]--
+        continue
+      }
+    }
+
+    if (i === letts.length - 1 && !err) {
+      if (letts[i] !== 1) letts[i]--
+      else letts.pop()
+    }
+  }
+
+  for (let i = 0; i < letts.length - 1; i++) if (letts[i] !== letts[i + 1]) return false
+
+  return true
+}
