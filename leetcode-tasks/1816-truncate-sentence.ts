@@ -10,3 +10,16 @@ const truncateSentence2 = (s: string, k: number): string => {
 
   return arr.join(' ')
 }
+
+// Runtime 66 ms Beats 89.41% Memory 42.9 MB Beats 90.59%
+
+const truncateSentence3 = (s: string, k: number): string => {
+  let spaceCount = 0
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === ' ') spaceCount++
+    if (spaceCount === k) return s.slice(0, i)
+  }
+
+  return s
+}
