@@ -12,3 +12,30 @@ const largestLocal = (grid: number[][]): number[][] => {
 
   return result
 }
+
+// Runtime 72 ms Beats 100% Memory 47 MB Beats 33.33%
+
+const largestLocal2 = (grid: number[][]): number[][] => {
+  const result = []
+  for (let i = 0; i < grid.length - 2; i++) {
+    result[i] = []
+
+    let maxA, maxB, maxC
+
+    for (let j = 0; j < grid[0].length; j++) {
+      if (!maxA) maxA = Math.max(grid[i][j], grid[i + 1][j], grid[i + 2][j])
+      else if (!maxB) maxB = Math.max(grid[i][j], grid[i + 1][j], grid[i + 2][j])
+      else {
+        if (maxC) {
+          maxA = maxB
+          maxB = maxC
+        }
+
+        maxC = Math.max(grid[i][j], grid[i + 1][j], grid[i + 2][j])
+        result[i].push(Math.max(maxA, maxB, maxC))
+      }
+    }
+  }
+
+  return result
+}
