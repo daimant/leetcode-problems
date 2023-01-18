@@ -35,3 +35,16 @@ const firstPalindrome3 = (words: string[]): string => {
 
 
 // Runtime 71 ms Beats 97.62% Memory 48.8 MB Beats 45.24%
+
+const firstPalindrome4 = (words: string[]): string => {
+  for (let w = 0; w < words.length; w++) {
+    if (words[w].length === 1) return words[w]
+
+    for (let i = 0; i < words[w].length / 2; i++) {
+      if (words[w][i] !== words[w][words[w].length - i - 1]) break
+      if (i === Math.trunc(words[w].length / 2) - 1) return words[w]
+    }
+  }
+
+  return ''
+}
