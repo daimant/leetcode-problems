@@ -15,3 +15,26 @@ const captureForts = (forts: number[]): number => {
 
   return result
 }
+
+// Runtime 81 ms Beats 17.39% Memory 42.5 MB Beats 100%
+
+const captureForts2 = (forts: number[]): number => {
+  let result = 0
+  let start = -1
+  let typeStart: number
+
+  if (!forts.includes(1)) return result
+
+  for (let i = 0; i < forts.length; i++) {
+    if (forts[i] === -1 || forts[i] === 1) {
+      if (start >= 0 && i - start - 1 > result && ((typeStart === -1 && forts[i] === 1) || (typeStart === 1 && forts[i] === -1))) {
+        result = i - start - 1
+      }
+
+      typeStart = forts[i]
+      start = i
+    }
+  }
+
+  return result
+}
