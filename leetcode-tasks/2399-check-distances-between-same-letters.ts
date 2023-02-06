@@ -27,3 +27,30 @@ const checkDistances = (s: string, distance: number[]): boolean => {
 
   return true
 }
+
+// migrate on es6 syntax Runtime 73 ms Beats 95.24% Memory 46.5 MB Beats 42.86%
+
+const checkDistances2 = (s: string, distance: number[]): boolean => {
+  const mapDistance = new Map(distance.map((el, i) => [String.fromCharCode(i + 97), el]))
+  const mapLett = new Map()
+
+  for (let i = 0; i < s.length; i++) {
+    mapLett.set(s[i], mapLett.has(s[i]) ? mapLett.get(s[i]).concat(i) : [i])
+  }
+
+  for (const lett of mapLett) {
+    const currDistance = mapDistance.get(lett[0])
+    const currArr = lett[1]
+    let currResult = false
+
+    for (let j = 0; j < currArr.length - 1; j++) {
+      for (let k = j + 1; k < currArr.length; k++) {
+        if (currArr[k] - currArr[j] - 1 === currDistance) currResult = true
+        if (currArr[k] - currArr[j] - 1 >= currDistance) break
+      }
+    }
+
+    if (!currResult) return false  }
+
+  return true
+}
