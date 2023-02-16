@@ -52,3 +52,21 @@ const evaluateTree2 = (root: TreeNode | null): boolean => {
 
   if (root.val === 2) return evaluateTree(root.left) || evaluateTree(root.right)
 }
+
+// Runtime 70 ms Beats 94.87% Memory 48.7 MB Beats 87.18%
+
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+
+const evaluateTree3 = (r: TreeNode | null, evTree = evaluateTree): boolean => !r || r.val === 0 || r.val === 1 ? Boolean(r && r.val) : r.val === 3 ? evTree(r.left) && evTree(r.right) : evTree(r.left) || evTree(r.right)
