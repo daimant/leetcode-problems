@@ -28,3 +28,21 @@ const fillCups = (amount: number[]): number => {
   return result
 }
 
+// 30 / 280 testcases passe
+
+const fillCups2 = (amount: number[]): number => {
+  let result = 0
+
+  while (amount[0] !== amount[1] || amount [1] !== amount[2]) {
+    amount.sort((a, b) => a - b)
+
+    if (amount[0] === amount[1] || amount[0] === amount[1] - 1) {
+      amount[0]++
+      amount[1]++
+    } else amount[0] += 2
+
+    result++
+  }
+
+  return result
+}
