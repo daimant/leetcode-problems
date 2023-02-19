@@ -46,3 +46,33 @@ const fillCups2 = (amount: number[]): number => {
 
   return result
 }
+
+// Runtime 68 ms Beats 72.73% Memory 48.7 MB Beats 27.27%
+
+const fillCups3 = (amount: number[]): number => {
+  let result = 0
+
+  while (amount[0] || amount[1] || amount[2]) {
+    let value = 2
+    amount.sort((a, b) => b - a)
+
+    if (value && amount[0]) {
+      amount[0]--
+      value--
+    }
+
+    if (value && amount[1]) {
+      amount[1]--
+      value--
+    }
+
+    if (value && amount[2]) {
+      amount[2]--
+      value--
+    }
+
+    result++
+  }
+
+  return result
+}
