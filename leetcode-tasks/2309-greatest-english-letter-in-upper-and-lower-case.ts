@@ -27,3 +27,15 @@ const greatestLetter2 = (s: string): string => {
 
   return result.toUpperCase()
 }
+
+// Runtime 56 ms Beats 100% Memory 44.7 MB Beats 94.74%
+
+const greatestLetter3 = (s: string): string => {
+  const set = new Set(s.split(''))
+
+  for (let i = 90; i >= 65; i--) {
+    if (set.has(String.fromCharCode(i)) && set.has(String.fromCharCode(i + 32))) return String.fromCharCode(i)
+  }
+
+  return ''
+}
