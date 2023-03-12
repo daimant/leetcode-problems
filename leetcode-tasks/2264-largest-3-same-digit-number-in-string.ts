@@ -11,3 +11,16 @@ const largestGoodInteger = (num: string): string => {
 
   return result
 }
+// Runtime 62 ms Beats 88.89% Memory 47.4 MB Beats 16.67%
+
+const largestGoodInteger2 = (num: string): string => {
+  let result = ''
+  let cache = { a: '', b: num[0], c: num[1] }
+
+  for (let i = 0; i < num.length - 2; i++) {
+    [cache.a, cache.b, cache.c] = [cache.b, cache.c, num[i + 2]]
+    if (cache.a === cache.b && cache.a === cache.c && `${cache.a}${cache.b}${cache.c}` > result) result = `${cache.a}${cache.b}${cache.c}`
+  }
+
+  return result
+}
