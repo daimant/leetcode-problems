@@ -11,3 +11,7 @@ const vowelStrings = (words: string[], left: number, right: number): number => {
 
   return result
 }
+
+// Runtime 80 ms Beats 75.36% Memory 45.5 MB Beats 89.85%
+
+const vowelStrings2 = (words: string[], left: number, right: number, letts: Set<string> = new Set(['a', 'e', 'i', 'o', 'u'])): number => words.reduce((acc, word, i) => i >= left && i <= right && letts.has(word[0]) && letts.has(word[word.length - 1]) ? acc + 1 : acc, 0)
