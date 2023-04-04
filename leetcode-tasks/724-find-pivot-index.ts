@@ -13,3 +13,19 @@ const pivotIndex = (nums: number[]): number => {
 
   return result
 }
+
+// Runtime 66 ms Beats 97.33% Memory 45.5 MB Beats 56.62%
+
+const pivotIndex2 = (nums: number[]): number => {
+  const sum = nums.reduce((acc, curr) => acc + curr, 0)
+  let leftSum = 0
+  let result = -1
+
+  nums.forEach((el, i) => {
+    if (result >= 0) return
+    if (leftSum === sum - leftSum - nums[i]) return result = i
+    leftSum += nums[i]
+  })
+
+  return result
+}
