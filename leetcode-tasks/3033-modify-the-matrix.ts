@@ -19,3 +19,26 @@ const modifiedMatrix = (matrix: number[][]): number[][] => {
 
   return matrix
 }
+
+// added more unreadable solution
+// Accepted
+// Runtime 81 ms Beats 80.46% of users with TypeScript
+// Memory 55.11 MB Beats 75.86% of users with TypeScript
+
+const modifiedMatrix2 = (matrix: number[][]): number[][] => {
+  const maxOfCols = new Array(...matrix[0])
+  const minusEls = []
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] === -1) minusEls.push([i, j])
+      else if (matrix[i][j] > maxOfCols[j]) maxOfCols[j] = matrix[i][j]
+    }
+  }
+
+  for (let i = 0; i < minusEls.length; i++) {
+    matrix[minusEls[i][0]][minusEls[i][1]] = maxOfCols[minusEls[i][1]]
+  }
+
+  return matrix
+}
