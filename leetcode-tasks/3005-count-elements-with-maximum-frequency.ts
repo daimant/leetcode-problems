@@ -20,3 +20,22 @@ const maxFrequencyElements = (nums: number[]): number => {
 
   return maxFreqEls.size * maxFreq
 }
+
+// optimized solution
+// Accepted
+// Runtime 54 ms Beats 95.12% of users with TypeScript
+// Memory 52.05 MB Beats 42.07% of users with TypeScript
+
+const maxFrequencyElements2 = (nums: number[]): number => {
+  const frequenciesMap = new Map()
+  let maxFreq = 0
+
+  for (let i = 0; i < nums.length; i++) {
+    const get = frequenciesMap.get(nums[i]) + 1 || 1
+    if (maxFreq < get) maxFreq = get
+
+    frequenciesMap.set(nums[i], get)
+  }
+
+  return Array.from(frequenciesMap).filter(el => el[1] === maxFreq).length * maxFreq
+}
