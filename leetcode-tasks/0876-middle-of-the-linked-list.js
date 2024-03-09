@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 48 ms Beats 75.89% of users with JavaScript
+// Memory 33.94 MB Beats 100.00% of users with JavaScript
+
 /**
  * Definition for singly-linked list.
  * function ListNode(val) {
