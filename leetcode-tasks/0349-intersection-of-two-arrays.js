@@ -1,4 +1,6 @@
-"use strict";
+// Accepted
+// Runtime 52 ms Beats 75.37% of users with JavaScript
+// Memory 34.12 MB Beats 100.00% of users with JavaScript
 
 /**
  * @param {number[]} nums1
