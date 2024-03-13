@@ -22,8 +22,8 @@ const pivotInteger = (n: number): number => {
 }
 
 // Accepted
-// Runtime 58 ms Beats 68.75% of users with TypeScript
-// Memory 53.59 MB Beats 12.50% of users with TypeScript
+// Runtime 50 ms Beats 96.88% of users with TypeScript
+// Memory 53.96 MB Beats 6.25% of users with TypeScript
 
 const pivotInteger2 = (n: number): number => {
   const setSumsFromStart = []
