@@ -19,11 +19,11 @@ const pivotInteger = (n: number): number => {
   }
 
   return -1
-};
+}
 
-// Runtime: 75 ms, faster than 100.00% of TypeScript online submissions for Find the Pivot Integer.
-// Memory Usage: 47.1 MB, less than 100.00% of TypeScript online submissions for Find the Pivot Integer.
-// one pass
+// Accepted
+// Runtime 58 ms Beats 68.75% of users with TypeScript
+// Memory 53.59 MB Beats 12.50% of users with TypeScript
 
 const pivotInteger2 = (n: number): number => {
   const setSumsFromStart = []
@@ -41,5 +41,4 @@ const pivotInteger2 = (n: number): number => {
   }
 
   return -1
-};
-
+}
