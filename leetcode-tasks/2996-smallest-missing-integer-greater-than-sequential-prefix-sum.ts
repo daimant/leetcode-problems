@@ -1,6 +1,6 @@
 // Accepted
-// Runtime 50 ms Beats 94.74% of users with TypeScript
-// Memory 52.03 MB Beats 35.09% of users with TypeScript
+// Runtime 48 ms Beats 95.77% of users with TypeScript
+// Memory 51.82 MB Beats 57.75% of users with TypeScript
 
 const missingInteger = (nums: number[]): number => {
   const unique = new Set(nums)
