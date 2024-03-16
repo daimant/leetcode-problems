@@ -1,7 +1,5 @@
-/**
- * @param {number[]} nums
- * @return {number[]}
- */
+// it worked in 2020, but now it doesn’t
+
 var productExceptSelf = function(nums) {
   return nums.map((el, i, arr) => {
     el = arr.slice();
