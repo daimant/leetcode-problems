@@ -31,4 +31,21 @@ const minimumBoxes = (apples: number[], capacity: number[]): number => {
   }
 
   return capacity.length
-};
+}
+
+// Accepted
+// Runtime 48 ms Beats 98.99% of users with TypeScript
+// Memory 51.96 MB Beats 38.38% of users with TypeScript
+
+const minimumBoxes2 = (apples: number[], capacity: number[]): number => {
+  let applesAmount = apples.reduce((acc, curr) => acc + curr, 0)
+  capacity.sort((a, b) => b - a)
+
+
+  for (let i = 0; i < capacity.length; i++) {
+    applesAmount -= capacity[i]
+    if (applesAmount <= 0) return i + 1
+  }
+
+  return capacity.length
+}
