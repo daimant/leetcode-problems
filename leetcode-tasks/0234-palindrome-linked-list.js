@@ -1,16 +1,7 @@
-"use strict";
+// Accepted
+// Runtime 68 ms Beats 100.00% of users with JavaScript
+// Memory 41.55 MB Beats 100.00% of users with JavaScript
 
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} head
- * @return {boolean}
- */
 var isPalindrome = function(head) {
   let arr = [];
 
@@ -22,4 +13,4 @@ var isPalindrome = function(head) {
   }
 
   return JSON.stringify(arr) === JSON.stringify(arr.reverse());
-};
+}
