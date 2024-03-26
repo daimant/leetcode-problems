@@ -26,3 +26,23 @@ const findIntersectionValues2 = (nums1: number[], nums2: number[]): number[] => 
 
   return [0, 0]
 }
+
+// Accepted
+// Runtime 82 ms Beats 94.74% of users with TypeScript
+// Memory 57.10 MB Beats 28.57% of users with TypeScript
+
+const findIntersectionValues3 = (nums1: number[], nums2: number[]): number[] => {
+  const result = [0, 0]
+  const setNums1 = new Set(nums1)
+  const setNums2 = new Set(nums2)
+
+  nums1.forEach((el) => {
+    if (setNums2.has(el)) result[0]++
+  })
+  nums2.forEach((el) => {
+    if (setNums1.has(el)) result[1]++
+  })
+
+
+  return result
+}
