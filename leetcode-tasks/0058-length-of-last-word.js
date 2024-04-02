@@ -1,4 +1,6 @@
-"use strict";
+// Accepted
+// Runtime 48 ms Beats 74.51% of users with JavaScript
+// Memory 33.97 MB Beats 100.00% of users with JavaScript
 
 /**
  * @param {string} s
