@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 72 ms Beats 5.80% of users with JavaScript
+// Memory 38.56 MB Beats 100.00% of users with JavaScript
+
 /**
  * @param {string} s
  * @return {number}
