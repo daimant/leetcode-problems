@@ -26,3 +26,19 @@ const findMinimumOperations2 = (s1: string, s2: string, s3: string): number => {
 
   return stopMatch === 0 ? -1 : s1.slice(stopMatch).length + s2.slice(stopMatch).length + s3.slice(stopMatch).length
 }
+
+// Accepted
+// Runtime 91 ms Beats 90.24% of users with TypeScript
+// Memory 55.30 MB Beats 39.02% of users with TypeScript
+
+const findMinimumOperations3 = (s1: string, s2: string, s3: string): number => {
+  const maxLen = Math.max(s1.length, s2.length, s3.length)
+
+  for (let i = 0; i < maxLen; i++) {
+    if (s1[i] !== s2[i] || s2[i] !== s3[i] || s3[i] !== s1[i]) {
+      return i > 0 ? s1.slice(i).length + s2.slice(i).length + s3.slice(i).length : -1
+    }
+  }
+
+  return 0
+}
