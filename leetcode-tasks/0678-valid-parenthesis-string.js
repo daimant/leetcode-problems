@@ -1,3 +1,7 @@
+// Accepted
+// Solution Runtime 80 ms Beats 5.05% of users with JavaScript
+// Memory 35.35 MB Beats 100.00% of users with JavaScript
+
 /**
  * @param {string} s
  * @return {boolean}
