@@ -1,3 +1,7 @@
+// Accepted
+// Solution Runtime 80 ms Beats 5.06% of users with JavaScript
+// Memory 38.54 MB Beats 100.00% of users with JavaScript
+
 /**
  * @param {number[]} students
  * @param {number[]} sandwiches
