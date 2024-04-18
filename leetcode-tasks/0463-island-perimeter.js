@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 204 ms Beats 11.33% of users with JavaScript
+// Memory 46.03 MB Beats 100.00% of users with JavaScript
+
 /**
  * @param {number[][]} grid
  * @return {number}
