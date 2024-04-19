@@ -1,4 +1,6 @@
-"use strict";
+// Accepted
+// Runtime 140 ms Beats 10.37% of users with JavaScript
+// Memory 53.54 MB Beats 50.48% of users with JavaScript
 
 /**
  * @param {character[][]} grid
