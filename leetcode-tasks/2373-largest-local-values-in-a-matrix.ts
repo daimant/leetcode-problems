@@ -14,8 +14,8 @@ const largestLocal = (grid: number[][]): number[][] => {
 }
 
 // Accepted
-// Runtime 72 ms Beats 68.57% of users with TypeScript
-// Memory 46.96 MB Beats 100.00% of users with TypeScript
+// Runtime 64 ms Beats 94.29% of users with TypeScript
+// Memory 55.08 MB Beats 42.86% of users with TypeScript
 
 const largestLocal2 = (grid: number[][]): number[][] => {
   const result = []
