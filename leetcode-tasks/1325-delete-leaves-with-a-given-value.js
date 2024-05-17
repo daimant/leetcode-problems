@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 100 ms Beats 5.11% of users with JavaScript
+// Memory 41.60 MB Beats 100.00% of users with JavaScript
+
 /**
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
