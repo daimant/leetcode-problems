@@ -1,6 +1,6 @@
 // Accepted
-// Runtime 76 ms Beats 5.39% of users with JavaScript
-// Memory 41.24 MB Beats 100.00% of users with JavaScript
+// Solution Runtime 58 ms Beats 75.06% of users with JavaScript
+// Memory 52.22 MB Beats 64.24% of users with JavaScript
 
 /**
  * @param {number[]} nums
