@@ -20,3 +20,18 @@ const isValid = (word: string): boolean => {
 
   return false
 }
+
+// optimized
+// Accepted
+// Runtime 53 ms Beats 96.58% of users with TypeScript
+// Memory 52.05 MB Beats 65.75% of users with TypeScript
+
+const isValid2 = (word: string): boolean => {
+  if (
+    word.length < 3
+    || word.replace(/[a-z, 0-9]/gi, '').length !== 0
+    || word.replace(/[0-9]/, '').replace(/[aeiou]/gi, '').length === 0
+    || word.replace(/[0-9]/, '').replace(/[^aeiou]/gi, '').length === 0
+  ) return false
+  else return true
+}
