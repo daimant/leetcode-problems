@@ -16,3 +16,20 @@ const duplicateNumbersXOR = (nums: number[]): number => {
 
   return result
 }
+
+// optimized
+// Accepted
+// Runtime 57 ms Beats 85.00% of users with TypeScript
+// Memory 51.79 MB Beats 90.00% of users with TypeScript
+
+const duplicateNumbersXOR2 = (nums: number[]): number => {
+  const dupl = new Set()
+  let result = 0
+
+  nums.forEach(el => {
+    if (dupl.has(el)) result ^= el
+    else dupl.add(el)
+  })
+
+  return result
+}
