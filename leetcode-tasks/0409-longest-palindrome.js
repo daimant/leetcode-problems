@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 64 ms Beats 29.22% of users with JavaScript
+// Memory 35.39 MB Beats 100.00% of users with JavaScript
+
 "use strict";
 
 /**
