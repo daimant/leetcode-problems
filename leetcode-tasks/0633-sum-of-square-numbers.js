@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 55 ms Beats 77.40% Analyze Complexity
+// Memory 50.97 MB Beats 36.30%
+
 "use strict";
 
 /**
