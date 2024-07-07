@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 360 ms Beats 100.00%
+// Memory 96.92 MB Beats 65.00%
+
 /**
  * Definition for singly-linked list.
  * class ListNode {
@@ -41,6 +45,3 @@ const mergeNodes = (head: ListNode | null): ListNode | null => {
 
   return head
 };
-
-// Runtime: 532 ms, faster than 94.59% of TypeScript online submissions for Merge Nodes in Between Zeros.
-// Memory Usage: 88 MB, less than 100.00% of TypeScript online submissions for Merge Nodes in Between Zeros.
