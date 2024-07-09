@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 80 ms Beats 5.10%
+// Memory 38.77 MB Beats 100.00%
+
 // simple solution
 /**
  * @param {number[]} arr
@@ -12,6 +16,10 @@ const threeConsecutiveOdds = arr => {
 };
 
 // DP solution
+// Accepted
+// Runtime 35 ms Beats 100.00%
+// Memory 48.69 MB Beats 83.67%
+
 /**
  * @param {number[]} arr
  * @return {boolean}
