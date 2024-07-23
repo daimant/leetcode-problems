@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 65 ms Beats 68.39%
+// Memory 52.07 MB Beats 52.26%
+
 /**
  * @param {number[]} nums
  * @return {number[]}
