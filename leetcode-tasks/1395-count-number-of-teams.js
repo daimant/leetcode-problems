@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 4268 ms Beats 5.36%
+// Memory 38.84 MB Beats 100.00%
+
 /**
  * @param {number[]} rating
  * @return {number}
