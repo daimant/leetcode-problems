@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 212 ms Beats 31.14%
+// Memory 45.01 MB Beats 100.00%
+
 /**
  * @param {number} k
  * @param {number[]} nums
