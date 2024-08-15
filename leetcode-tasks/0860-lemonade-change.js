@@ -1,3 +1,7 @@
+// Accepted
+// Runtime 48 ms Beats 100.00%
+// Memory 35.98 MB Beats 100.00%
+
 "use strict";
 
 /**
