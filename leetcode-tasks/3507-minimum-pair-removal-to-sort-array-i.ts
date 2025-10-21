@@ -52,14 +52,6 @@ const minimumPairRemoval2 = (nums: number[]): number => {
   return countRemoval
 };
 
-const checkSortedArr = (nums: number[]): boolean => {
-  for (let i = 0; i < nums.length - 1; i++) {
-    if (nums[i] > nums[i + 1]) return false
-  }
-
-  return true
-}
-
 const findSmallestPairStartIndex = (nums: number[]) => {
   let smallestIndex = 0
   let smallestPairSum = nums[0] + nums[1]
