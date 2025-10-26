@@ -16,3 +16,23 @@ const hasSameDigits = (s: string): boolean => {
 
   return oldArr[0] === oldArr[1]
 }
+
+// Added optimized solution
+// Accepted 706 / 706 testcases passed Sergey Pomortsev submitted at Oct 24, 2025 14:13
+// Solution Runtime 7 ms Beats 79.31% Analyze Complexity Memory 60.58 MB Beats 72.41%
+
+const hasSameDigits2 = (s: string): boolean => {
+  let oldStr = s
+
+  while (oldStr.length !== 2) {
+    let newStr = ''
+
+    for (let i = 0; i < oldStr.length - 1; i++) {
+      newStr += String((+oldStr[i] + +oldStr[i + 1]) % 10)
+    }
+
+    oldStr = newStr
+  }
+
+  return oldStr[0] === oldStr[1]
+}
