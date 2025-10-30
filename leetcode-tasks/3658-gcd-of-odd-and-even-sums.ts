@@ -10,3 +10,9 @@ const gcdOfOddEvenSums = (n: number): number => {
 
   return 1
 }
+
+// Added optimized solution
+// Accepted 1000 / 1000 testcases passed Sergey Pomortsev submitted at Oct 26, 2025 15:45
+// Solution Runtime 0 ms Beats 100.00% Analyze Complexity Memory 55.60 MB Beats 96.94%
+
+const gcdOfOddEvenSums2 = (n: number): number => n
