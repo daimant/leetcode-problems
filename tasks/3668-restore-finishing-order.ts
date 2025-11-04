@@ -5,3 +5,7 @@ const recoverOrder = (order: number[], friends: number[]): number[] => {
   const friendsSet = new Set(friends)
   return order.filter(el => friendsSet.has(el))
 }
+
+// or same solution in one line
+
+const recoverOrder2 = (order: number[], friends: number[], friendsSet = new Set(friends)): number[] => order.filter(el => friendsSet.has(el))
