@@ -1,5 +1,5 @@
-// Accepted 989 / 989 testcases passed Sergey Pomortsev submitted at Nov 09, 2025 16:36
-// Solution Runtime 2 ms Beats 90.30% Analyze Complexity Memory 59.82 MB Beats 24.85%
+// Accepted 989 / 989 testcases passed Sergey Pomortsev submitted at Nov 21, 2025 09:04
+// Solution Runtime 1 ms Beats 99.39% Analyze Complexity Memory 58.82 MB Beats 78.18%
 
 function findMissingElements(nums: number[]): number[] {
   const result = [];
