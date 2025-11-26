@@ -16,3 +16,22 @@ const scoreBalance = (s: string): boolean => {
 
   return result
 }
+
+// Faster solution
+// Accepted 1000 / 1000 testcases passed Sergey Pomortsev  submitted at Oct 22, 2025 20:52
+// Solution Runtime 0 ms Beats 100.00% Analyze Complexity Memory 58.21 MB Beats 55.71%
+
+const scoreBalance2 = (s: string): boolean => {
+  let sumSymbols = 0
+  let currSymbSum = 0
+
+  for (let i = 0; i < s.length; i++) {
+    sumSymbols += s[i].charCodeAt(0) - 96
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    currSymbSum += s[i].charCodeAt(0) - 96
+    if (currSymbSum === sumSymbols / 2) return true
+    else if (currSymbSum > sumSymbols / 2) return false
+  }
+}
