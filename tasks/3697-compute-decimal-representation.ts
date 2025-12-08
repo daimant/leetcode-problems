@@ -5,3 +5,19 @@ const decimalRepresentation = (n: number): number[] => String(n).split('').reduc
   const currNum = Number(curr) * (10 ** (arr.length - i - 1))
   return currNum ? acc.concat(currNum) : acc
 }, [])
+
+// added faster solution
+// Accepted 1000 / 1000 testcases passed Sergey Pomortsev submitted at Oct 23, 2025 15:26
+// Solution Runtime 0 ms Beats 100.00% Analyze Complexity Memory 58.92 MB Beats 34.11%
+
+const decimalRepresentation2 = (n: number): number[] => {
+  const nStr = String(n)
+  const result = []
+
+  for (let i = 0; i < nStr.length; i++) {
+    const currNum = Number(nStr[i]) * (10 ** (nStr.length - i - 1))
+    if (currNum) result.push(currNum)
+  }
+
+  return result
+}
