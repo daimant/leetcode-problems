@@ -23,3 +23,25 @@ var kLengthApart = function (nums, k) {
 
   return true;
 };
+
+// optimized solution
+// Accepted 69 / 69 testcases passed Sergey Pomortsev submitted at Nov 17, 2025 15:17 Editorial
+// Solution Runtime 0 ms Beats 100.00% Analyze Complexity Memory 62.81 MB Beats 14.29%
+
+function kLengthApart2(nums: number[], k: number): boolean {
+  let count = 0;
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] === 0) {
+      count++;
+      if (nums[i + 1] === 1) {
+        if (count < k) return false;
+        count = 0;
+      }
+    } else if (nums[i] === nums[i + 1] && k) {
+      return false;
+    }
+  }
+
+  return true;
+};
