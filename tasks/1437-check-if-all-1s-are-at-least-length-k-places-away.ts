@@ -45,3 +45,17 @@ function kLengthApart2(nums: number[], k: number): boolean {
 
   return true;
 };
+
+// easily to understand but longer
+// Accepted 69 / 69 testcases passed Sergey Pomortsev submitted at Nov 17, 2025 15:01 Editorial
+// Solution Runtime 3 ms Beats 21.43% Analyze Complexity Memory 64.36 MB Beats 14.29%
+
+function kLengthApart3(nums: number[], k: number): boolean {
+  const places = [];
+
+  nums.forEach((el, i) => {
+    if (el) places.push(i);
+  })
+
+  return places.every((el, i, arr) => i === arr.length - 1 ? true : arr[i + 1] - el - 1 >= k);
+};
