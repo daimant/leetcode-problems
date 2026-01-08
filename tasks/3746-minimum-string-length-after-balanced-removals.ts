@@ -10,3 +10,19 @@ function minLengthAfterRemovals(s: string): number {
 
   return Math.abs((map.get('a') || 0) - (map.get('b') || 0))
 };
+
+// optimized
+// Accepted 680 / 680 testcases passed Sergey Pomortsev submitted at Dec 04, 2025 21:52
+// Solution Runtime 0 ms Beats 100.00% Analyze Complexity Memory 59.64 MB Beats 26.58%
+
+function minLengthAfterRemovals2(s: string): number {
+  let countA = 0
+  let countB = 0
+
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === 'a') countA++
+    else countB++
+  }
+
+  return Math.abs(countA - countB)
+};
