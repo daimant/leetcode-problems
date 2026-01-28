@@ -1,0 +1,8 @@
+# Accepted 21 / 21 testcases passed Sergey Pomortsev submitted at Jan 26, 2026 21:58 Editorial
+# Solution Runtime 279 ms Beats 35.65% Analyze Complexity Memory 66.36 MB Beats 29.75%
+w
+import pandas as pd
+
+def modifySalaryColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['salary'] = employees['salary'] * 2
+    return employees
