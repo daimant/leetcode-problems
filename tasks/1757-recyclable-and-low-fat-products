@@ -1,0 +1,4 @@
+# Accepted 22 / 22 testcases passed Sergey Pomortsev submitted at Feb 03, 2026 22:23
+# Solution Runtime 538 ms Beats 32.09%
+
+SELECT product_id FROM Products WHERE low_fats = 'Y' AND recyclable = 'Y';
