@@ -76,3 +76,53 @@ function decode(shortUrl: string): string {
  * Your functions will be called as such:
  * decode(encode(strs));
  */
+
+// optimize link 2 http://tinyurl.com/s.302t2t382r332s2t1a2r33311b3436332q302t31371b2s2t372x2v3219382x323d393630
+// Accepted 739 / 739 testcases passed Sergey Pomortsev submitted at Feb 08, 2026 22:27
+// Solution Runtime 45 ms Beats 84.62% Analyze Complexity Memory 58.41 MB Beats 5.13%
+
+/**
+ * Encodes a URL to a shortened URL.
+ */
+function encode(longUrl: string): string {
+  const arr = []
+
+  let secure = ''
+  if (longUrl.includes('https://')) {
+    longUrl = longUrl.replace('https://', '')
+    secure = 's.'
+  } else if (longUrl.includes('ftp://')) {
+    longUrl = longUrl.replace('ftp://', '')
+    secure = 'f.'
+  } else longUrl = longUrl.replace('http://', '')
+
+  for (let i = 0; i < longUrl.length; i++) {
+    arr.push(longUrl.charCodeAt(i).toString(36).padStart(2, '0'))
+  }
+
+  return `http://tinyurl.com/${secure}${arr.join('')}`
+};
+
+/**
+ * Decodes a shortened URL to its original URL.
+ */
+function decode(shortUrl: string): string {
+  const secure = shortUrl.slice(19, 21)
+  const str = shortUrl.slice(secure === 's.' || secure === 'f.'  ? 21 : 19)
+  const arr = []
+
+  for (let i = 0; i < str.length; i += 2) {
+    arr.push(str.slice(i, i + 2))
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = String.fromCharCode(parseInt(arr[i], 36))
+  }
+
+  return `${secure === 's.' ? 'https://' : secure === 'f.' ? 'ftp://' : 'http://'}${arr.join('')}`
+};
+
+/**
+ * Your functions will be called as such:
+ * decode(encode(strs));
+ */
