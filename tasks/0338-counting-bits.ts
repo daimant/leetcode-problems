@@ -23,3 +23,24 @@ function countBits(n: number): number[] {
 
   return resultArr
 };
+
+// optimized 2
+// Accepted 15 / 15 testcases passed  Sergey Pomortsev submitted at Feb 17, 2026 17:43
+// Solution Runtime 13 ms Beats 17.19% Analyze Complexity Memory 63.43 MB Beats 18.23%
+
+function countBits(n: number): number[] {
+  const resultArr = []
+
+  for (let i = 0; i <= n; i++) {
+    const currBin = i.toString(2)
+    let currCount = 0
+
+    for (let j = 0; j < currBin.length; j++) {
+      if (currBin[j] === '1') currCount++
+    }
+
+    resultArr.push(currCount)
+  }
+
+  return resultArr
+};
