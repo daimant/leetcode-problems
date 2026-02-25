@@ -40,3 +40,22 @@ function findKDistantIndices(nums: number[], key: number, k: number): number[] {
 
   return Array.from(result).sort((a, b) => a - b)
 };
+
+// added optimized solution
+// Accepted 87 / 87 testcases passed Sergey Pomortsev submitted at Feb 25, 2026 18:53
+// Solution Runtime 3 ms Beats 65.00% Analyze Complexity Memory 59.57 MB Beats 40.00 %
+
+function findKDistantIndices(nums: number[], key: number, k: number): number[] {
+  const keys = []
+  const result = []
+
+  nums.forEach((el, i) => {
+    if (el === key) keys.push(i)
+  })
+
+  for (let i = 0; i < nums.length; i++) {
+    if (keys.some(el => el - k <= i && i <= el + k)) result.push(i)
+  }
+
+  return result
+};
