@@ -1,3 +1,6 @@
+// Accepted 97 / 97 testcases passed Sergey Pomortsev submitted at Mar 01, 2026 14:08
+// Solution Runtime 4 ms Beats 96.55% Analyze Complexity Memory 57.82 MB Beats 100.00%
+
 const minPartitions7 = (n: string): number => {
   let max = -Infinity
 
