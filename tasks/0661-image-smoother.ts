@@ -28,3 +28,55 @@ function imageSmoother(img: number[][]): number[][] {
 
   return grid;
 };
+
+// optimized
+// Accepted 203 / 203 testcases passed Sergey Pomortsev submitted at Mar 26, 2026 23:15
+// Solution Runtime 10 ms Beats 63.64% Memory 64.40 MB Beats 33.33%
+
+function imageSmoother(img: number[][]): number[][] {
+  const grid = new Array(img.length).fill(0).map(el => new Array(img[0].length).fill(0));
+
+  for (let i = 0; i < img.length; i++) {
+    for (let j = 0; j < img[0].length; j++) {
+      let num = img[i][j];
+      let count = 1;
+
+      if (i > 0) {
+        if (j > 0) {
+          num += img[i - 1][j - 1];
+          count++;
+        }
+        num += img[i - 1][j];
+        count++;
+        if (j + 1 < img[0].length) {
+          num += img[i - 1][j + 1];
+          count++;
+        }
+      }
+      if (j + 1 < img[0].length) {
+        num += img[i][j + 1];
+        count++;
+      }
+      if (i + 1 < img.length) {
+        if (j > 0) {
+          num += img[i + 1][j - 1];
+          count++;
+        }
+        num += img[i + 1][j];
+        count++;
+        if (j + 1 < img[0].length) {
+          num += img[i + 1][j + 1]
+          count++;
+        }
+      }
+      if (j > 0) {
+        num += img[i][j - 1];
+        count++;
+      }
+
+      grid[i][j] = Math.trunc(num / count);
+    }
+  }
+
+  return grid;
+};
