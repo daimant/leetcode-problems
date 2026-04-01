@@ -1,5 +1,5 @@
-// Accepted 104 / 104 testcases passed Sergey Pomortsev submitted at Feb 15, 2026 09:52
-// Solution Runtime 1 ms Beats 57.14% Analyze Complexity Memory 56.65 MB Beats 14.29%
+// Accepted 104 / 104 testcases passed Sergey Pomortsev submitted at Apr 01, 2026 14:23
+// Solution Runtime 0 ms Beats 100.00% Memory 56.58 MB Beats 20.00%
 
 function smallestNumber(pattern: string): string {
   const arr = new Array(pattern.length + 1).fill(1)
