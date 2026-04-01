@@ -1,0 +1,10 @@
+# Accepted 14 / 14 testcases passed Sergey Pomortsev Sergey Pomortsev submitted at Feb 03, 2026 22:38
+# Solution Runtime 440 ms Beats 98.60%
+
+SELECT
+    teacher_id,
+    COUNT(DISTINCT subject_id) as cnt
+FROM
+    Teacher
+GROUP BY
+    teacher_id;
