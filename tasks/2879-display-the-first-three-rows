@@ -1,0 +1,7 @@
+# Accepted 21 / 21 testcases passed Sergey Pomortsev submitted at Jan 26, 2026 16:09 Editorial
+# Solution Runtime 282 ms Beats 37.45% Analyze Complexity Memory 66.21 MB Beats 71.83%
+
+import pandas as pd
+
+def selectFirstRows(employees: pd.DataFrame) -> pd.DataFrame:
+  return employees.head(3)
