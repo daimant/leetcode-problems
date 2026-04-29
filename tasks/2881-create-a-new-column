@@ -1,0 +1,8 @@
+# Accepted 21 / 21 testcases passed Sergey Pomortsev submitted at Feb 03, 2026 23:00
+# Solution Runtime 285 ms Beats 32.64% Analyze Complexity Memory 66.20 MB Beats 63.58%
+
+import pandas as pd
+
+def createBonusColumn(employees: pd.DataFrame) -> pd.DataFrame:
+    employees['bonus'] = employees['salary'] * 2
+    return employees
