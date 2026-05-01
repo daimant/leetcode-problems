@@ -1,0 +1,8 @@
+# Accepted 21 / 21 testcases passed Sergey Pomortsev submitted at Feb 16, 2026 21:50
+# Solution Runtime 259 ms Beats 89.68% Analyze Complexity Memory 66.44 MB Beats 51.95%
+
+import pandas as pd
+
+def renameColumns(students: pd.DataFrame) -> pd.DataFrame:
+    students.columns=['student_id', 'first_name', 'last_name', 'age_in_years']
+    return students
