@@ -1,0 +1,8 @@
+# Accepted 21 / 21 testcases passed Sergey Pomortsev submitted at Feb 05, 2026 17:49
+# Solution Runtime 259 ms Beats 90.44% Analyze Complexity Memory 66.06 MB Beats 95.94%
+
+import pandas as pd
+
+def changeDatatype(students: pd.DataFrame) -> pd.DataFrame:
+  students['grade'] = students['grade'].astype('int64')
+  return students
